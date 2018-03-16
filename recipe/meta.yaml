@@ -1,0 +1,33 @@
+{% set name = "csdms-cruaktemp" %}
+{% set version = "0.1" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/permamodel/cruAKtemp
+  git_rev: v{{ version }}
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - babelizer
+    - cruaktemp
+  run:
+    - cca-tools
+    - cruaktemp
+
+test:
+  requires:
+    - pymt
+
+about:
+  home: https://csdms.colorado.edu/wiki/Model:CruAKTemp
+  license: MIT
+  summary: 
+    The CRUAKTemp component provides access to a subsample of CRU NCEP
+    temperature data for Alaska.
+  dev_url: https://github.com/permamodel/cruAKtemp
